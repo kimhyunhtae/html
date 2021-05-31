@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<style>
+    body{background-image: url("black큰거.png");}
+</style>
+<body class="container"><!-- 간격 띄우기 -->
+     <article class ="start">
+        <img id="img2" class="mt-3" src="eucalyptus21.png">
+        <!-- <h1 class="mt-5 text-center"></h1> 제목 -->
+        <h4 class="mt-3 text-center text-light">당신은 어떤 허브와 같은 사람인가요?</h3>
+        <h6 class="mt-1 text-center text-muted">허브로 알아보는 나의 성향 테스트</h5>
+        <!-- <button type="button" class="btn btn-primary mt-5" onclick='start();'>테스트 시작하기</button>버튼 -->
+        <button type="button" class="btn btn-outline-secondary btn-lg mt-5" onclick="start();">테스트 시작하기</button>
+        <!-- <button class="button mt-5"onclick="start();">테스트 시작하기</button> -->
+    </article>
+
+    <article class="question">
+        <div class="progress mt-5">
+            <div class="progress-bar bg-secondary" role="progressbar" style="width: calc(100/12*1%)"></div> <!--프로그레스 바-->
+        </div>
+        <img id="img3" class="" src="mt-5" alt="title">
+        <h5 id="title" class="text-center text-light mt-2">문제</h2>
+        <input id="type" type="hidden" value="EI">
+        <button id="A" type="button" class="mt-5 btn btn-outline-info mt-3" >테스트 시작하기</button>
+        <button id="B" type="button" class="btn btn-outline-info mt-3" >테스트 시작하기</button>
+    </article>
+
+    <article class="result">
+        <img id="img" class="mt-5" src="" alt="herb">
+        <h2 id="herb" class="text-center text-light mt-5"></h2>
+        <h5 id="explain" class="text-center text-light mt-5"></h5>
+    </article>
+
+    <input type="hidden" id="EI" value="0">
+    <input type="hidden" id="SN" value="0">
+    <input type="hidden" id="TF" value="0">
+    <input type="hidden" id="JP" value="0">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+<script>
+        var num = 1;
+        var q = {
+         1: {
+             "img3" : "1.png", 
+             "title": "젠장, 코로나 자가격리 때문에 2주간 어디에도 나갈 수가 없다. \t 자가격리 기간동안 집에서 뭐하지? ", 
+             "type": "EI", "A": "2주씩이나 집에 박혀 있어야 하다니 끔찍해.\n 친구들에게 나의 자가격리 사실을 안주로 삼아 비대면 파티를 연다! ", 
+             "B": "집콕? 굳이 밖에 나가지 않아도 되는 좋은 명분이 생겼다. 그동안 밀린 영화,드라마 정주행하고 잠이나 실컷 자야지."
+            },
+         2: {"img3" : "2.png", 
+            "title": "다음주까지 제출해야 할 과제를 부여받았다. 나는? ", 
+            "type": "JP", "A": "아무 계획이 없으면 불안하기 때문에 이번 주 스케줄을 먼저 확인하고, 다음주까지 과제를 어떻게 제출할지 생각한다.",
+            "B": "계획은 세워봐야 지켜지지도 않는다. 내가 하고 싶을 때 해야지 최고의 능률이 발휘된다."
+            },
+         3: {"img3" : "3.png", 
+             "title": "낯선 모임, 새로운 사람들과 한 팀을 이뤘고, 이제 내 소개를 할 차례다. 나는?", 
+             "type": "EI", "A": "새로운 사람들이라니, 앞으로 어떤 일들이 펼쳐질까? 기대가 된다. 사람들에게 내가 어떤 사람인지, 나에 대해 적극적으로 소개한다.",
+             "B": "부끄럽다. 왜 내 소개를 해야하는거지? 앞 사람 따라서 간단히 말하고 차례를 넘긴다. 휴."
+            },
+         4: {"img3" : "4.png",
+            "title": "오랜만에 너무 재미있는 영화를 봤다. 이 영화는", 
+            "type": "SN", "A": "디테일이나 배우의 연기력, 소품이나 연출등 영화를 이루는 요소들이 완벽했어.", 
+            "B": "감독이 영화를 통해 전달하는 메세지가 나의 마음을 울렸어."
+            },
+         5: {"img3" : "5.png",
+            "title": "친구가 늦게 일어나서 드라이샴푸로 대충하고 나왔다고 한다. 나는 친구에게", 
+            "type": "TF", "A": "'드라이샴푸'라니 어마어마한 물건인 걸? 다음에 나도 써 봐야겠다.",
+             "B": "많이 피곤했나보구나. 약속 시간을 늦췄을 걸. "
+            },
+         6: {"img3" : "6.png",
+            "title": "팀프로젝트를 할 때의 나는", 
+            "type": "JP", "A": "뭐부터 해야할지 계획을 정해야 틀이 잡힌다.",
+             "B": "자료조사부터 해봐야 틀이 잡힌다."
+            },
+         7: {"img3" : "7.png",
+            "title": "비행기를 타고 해외여행을 떠난다. 비행기에서 나는",
+            "type": "SN", "A": "아 ㅋㅋ 기대된다. 근데 자리가 창가자리가 아니면 어떡하지? 기내식 맛 없다는데 간식이라도 좀 사올 걸.",
+             "B": "비행기가 갑자기 추락하면 어떡하지? 아 근데 추락할 확률 거의 없지않나? 그래도 만약 추락하면 어떡하지? 나 수영도 못하는데."
+            },
+         8: {"img3" : "8.png",
+            "title": "슬픔을 나누면?", 
+            "type": "TF", "A": "슬픈 사람이 둘이 되는 것.",
+             "B": "슬픔은 나누면 반이 된다."
+            },
+         9: {"img3" : "9.png",
+            "title": "친한 친구가 취업준비 때문에 힘들다고 한다. 나는 친구에게", 
+            "type": "TF", "A": "어떤 준비하고 있는데? 이력서는 넣어봤어?라고 관심을 표현한다.",
+            "B": "취준 힘들지..라면서 행여나 곤란스러울까 봐 묻지 못한다."
+            },
+         10: {"img3" : "10.png",
+            "title": "아직 여행 마지막 날의 일정을 짜지 못한 나는", 
+            "type": "JP", "A": "틈틈히 미리 루트를 구상해둔다.",
+             "B": "미루고 미루다 전날 잠들기 직전에 짠다."
+            },
+         11: {"img3" : "11.png",
+            "title": "교수님께서 이 부분은 시험에 꼭 나온다고 하셨는데, 내용이 이해가 잘 되지 않는다.", 
+            "type": "SN", "A": "병아리는 삐약삐약 아닌가? 이해가 안 가는데.. 뭐 맞는 말이니까 가르치는 거겠지. 일단 외우자.",
+             "B": "엥? 병아리가 멍멍이라고? 원래 삐약삐약 아닌가 도대체 왜 멍멍인거지? 이해를 못하겠는데 어떻게 기억하라는거야."
+            },
+         12: {"img3" : "12.png",
+            "title": "나는 기분이 안 좋을 때",
+            "type": "EI", "A": "집에 혼자 있으면 괜히 울적해진다.", 
+            "B": "이럴 때 나가봤자 기만 빨린다."
+        }
+        }
+        var result = {
+            "ISTJ" : {"herb" : "스테비아", "explain" : "스테비아처럼 달콤한 당신은", "img": "29.png"},
+            "ISFJ" : {"herb" : "라벤더", "explain" : "123", "img" : "22.png"},
+            "INFJ" : {"herb" : "세이지", "explain" : "123", "img" : "23.png"},
+            "INTJ" : {"herb" : "카모마일", "explain" : "123", "img" : "24.png"},
+            "ISTP" : {"herb" : "레몬밤", "explain" : "123", "img" : "25.png"},
+            "ISFP" : {"herb" : "차이브", "explain" : "123", "img" : "26.png"},
+            "INFP" : {"herb" : "히솝", "explain" : "123", "img" : "27.png"},
+            "INTP" : {"herb" : "소렐", "explain" : "123", "img" : "28.png"},
+            "ESTP" : {"herb" : "바질", "explain" : "123", "img" : "basil.png"},
+            "ESFP" : {"herb" : "챠빌", "explain" : "123", "img" : "30.png"},
+            "ENFP" : {"herb" : "보리지", "explain" : "123", "img" : "31.png"},
+            "ENTP" : {"herb" : "유칼립투스", "explain" : "123", "img" : "eucalyptus21.png"},
+            "ESTJ" : {"herb" : "페퍼민트", "explain" : "132", "img" : "33.png"},
+            "ESFJ" : {"herb" : "로즈마리", "explain" : "123", "img" : "40.png"},
+            "ENFJ" : {"herb" : "야로우", "explain" : "123", "img" : "35.png"},
+            "ENTJ" : {"herb" : "타라곤", "explain" : "123", "img" : "36.png"}
+
+        }
+        function start() {
+            $(".start").hide();
+            $(".question").show();
+            next();
+        }
+        $("#A").click(function(){
+         var type = $("#type").val();
+         var preValue = $("#"+type).val();
+         $("#"+type).val(parseInt(preValue)+1);
+         next();
+        
+        });
+        $("#B").click(function(){
+            next();
+        });
+        function next() {
+            if(num==13){
+                 $(".question").hide();
+                 $(".result").show();
+                 var mbti ="";
+                 ($("#EI").val()<2) ? mbti+="I" :  mbti+="E";
+                 ($("#SN").val()<2) ? mbti+="N" :  mbti+="S";
+                 ($("#TF").val()<2) ? mbti+="F" :  mbti+="T";
+                 ($("#JP").val()<2) ? mbti+="P" :  mbti+="J";
+                 alert(mbti);
+                 $("#img").attr("src",result[mbti]["img"]);
+                 $("#herb").html(result[mbti]["animal"]);
+                 $("#explain").html(result[mbti]["explain"]);
+                //  if ($("#EI").val()<2){
+                //      mbti = mbti+"I";
+                //  }else{
+                //      mbti = mbti+"E";
+                //  }
+                 
+            } else{
+                $(".progress-bar").attr('style','width: calc(100/12*'+num+'%)')
+                $("#img3").attr("src",q[num]["img3"])
+                $("#title").html(q[num]["title"]);
+                $("#type").val(q[num]["type"]);
+                $("#A").html(q[num]["A"]);
+                $("#B").html(q[num]["B"]);
+            num++;
+            }
+        }
+</script>
+
+</body>
+</html>
