@@ -1,3 +1,7 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&family=Noto+Sans+KR:wght@100&display=swap');
+
+
 article{
     display: flex;
     flex-direction: column;
@@ -10,15 +14,49 @@ display: none;
 .result{
     display: none;
 }
+#mainTitle{
+    font-family: 'Nanum Myeongjo', serif;
+
+}
+#subTitle{
+    font-family: 'Noto Sans KR', sans-serif;
+}
+#title{
+    font-family: 'Nanum Gothic', sans-serif;
+
+}
+#name{
+    font-size:auto;
+    font-weight: bold;
+    color:wheat;
+    font-family: 'Nanum Myeongjo', serif;
+}
+#herb{
+    font-size:50px;
+     font-weight: bold; 
+    color: cornsilk;
+    font-family: 'Noto Serif KR', serif;
+}
+.explaincontainer
+{
+    font-family: 'Nanum Myeongjo', serif;
+    color:whitesmoke;
+}
+#watermark{
+    font-size:11px;
+     
+    color:lightslategray;
+    font-family: 'Noto Sans KR', sans-serif;
+   }
 
 #img{
-    width: 300px;
-    height: 300px;
+    width: 280px;
+    height: 280px;
     margin: 0 auto;
 }
 #img2{
-    width: 300px;
-    height: 300px;
+    width: 280px;
+    height: 280px;
     margin: 0 auto
 }
 
@@ -28,6 +66,73 @@ display: none;
     height: 65px;
     margin: 0 auto;
         
+}
+
+
+.imgcontainer
+{
+  display: flex;
+  margin: 0 auto;
+  
+  
+}
+#imgbest{
+    width: 90px;
+    height: 90px;
+    margin-right: 110px;
+    
+
+}
+#imgworst{
+    width: 90px;
+    height: 90px;
+    
+
+}
+
+.couplecontainer
+{
+    font-size:35px;
+    font-weight: bold; 
+    color: cornsilk;
+    font-family: 'Noto Serif KR', serif;
+   margin: 0 auto;
+  display: flex;
+}
+#couplebest{
+margin-right: 30px;
+}
+#coupleworst{
+   margin-left: 20px;
+   
+}
+.share{
+    margin: 0 auto;
+}
+.kakao_ad{
+    width : 320px;
+    margin : 0 auto;
+
+}
+.golink{
+    font-size:22px;
+     
+    color: cornsilk;
+    font-family: 'Nanum Brush Script', cursive;
+   margin: 0 auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.shareSNS{
+    font-size: 10px;
+    font-weight: bold; 
+    color:goldenrod;
+    font-family: 'Nanum Brush Script', cursive;
+   margin: 0 auto;
+   margin-top: 5px;
+  display: flex;
+
 }
 
 /* .button
