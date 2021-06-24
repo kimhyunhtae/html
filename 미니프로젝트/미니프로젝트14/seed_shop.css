@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-family: "돋움";
+    font-size: 14px;
+    color: #444444;
+}
+ul{
+    list-style-type: none;
+}
+.clear
+{
+    clear: both;
+}
+
+#main_title{
+    font-family: "맑은고딕";
+    margin: 10px;
+    padding-bottom: 6px;
+    border-bottom: solid 2px #aaaaaa;
+}
+.list_item{
+    margin: 10px;
+    padding: 10px;
+}
+.image{
+    float: left;
+}
+.intro{
+    width: 300px;
+    margin-left: 20px;
+    float: left;
+}
+.price{
+    width: 150px;
+    float: left;
+}
+.red{
+    font-weight: bold;
+    color: #e25147;
+}
+.small{
+    font-style: 12px;
+    margin-top: 5px;
+}
+.company{
+    width: 90px;
+    float: left;
+}
+.hit{
+    width: 90px;
+}
+.line{
+    margin: 10px;
+    border: solid 1px #cccccc;
+}
