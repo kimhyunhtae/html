@@ -1,0 +1,60 @@
+화면명 네이버웨일 what's new 탭
+화면설명 whale update 및 news 페이지
+
+
+맨위 "contents_banner WhatsNew_banner"아티클
+    background: url(/_resource/img/guide/WhatsNEW_bg.png) no-repeat top center/ cover;
+
+
+안에 div 클래스 "inner"
+.whats_new .contents_banner .inner {
+    display: table;
+    width: 100%;
+    min-height: 300px;
+}
+.inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+그안에 div 클래스 textarea 만들어서
+폰트 설정해줬고,
+
+
+whale update 아티클
+
+안에 div 클래스 "inner"
+
+
+.inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    width: 100%;
+}
+대충 크기 조절해주고
+
+부모영역인
+.whats_new .article_title {
+    position: relative;
+}
+relative로 해주고,
+
+자식영역인
+.whats_new .article_title .more {
+    position: absolute;
+    top: 25%;
+    right: 0;
+}
+absolute 태그를 지정해줌으로써 박스1과 박스2를 나눠줌
+이게없으면
+자식영역(더보기)가 나란히 정렬이 안됨
+
+그밑에
+리스트 3개만들어서 각각 float:left지정해서 가로로 나란히 세우고,
+
+각각의 list클래스 안에 float:left 지정해서 아이콘사진과 텍스트 나란히세우고,
+
+텍스트에 a태그에 하이퍼링크를 연결하여 클릭하면 해당 업데이트의 최신 정보를 볼 수 있는 사이트로 이동
+
+whale news 아티클
