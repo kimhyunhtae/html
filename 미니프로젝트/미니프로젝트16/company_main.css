@@ -1,0 +1,47 @@
+.clear{
+    clear: both;
+}
+#header{
+width: 800px;
+height: 95px;
+background-color: #2d3a4b;
+
+}
+#logo{
+    margin: 30px 0 0 20px;
+    float: left;
+}
+#top_menu{
+    font-size: 11px;
+    color: white;
+    float: right;
+    margin-top: 20px;
+    margin-right: 10px;
+}
+
+#main_menu{
+    font-size: 16px;
+    color: white;
+    float: left;
+}
+
+#main_menu li{
+    float: left;
+    margin-top: 20px;
+    margin-left: 32px;
+    
+}
+#content {
+    width: 800px;
+}
+#content li {
+    width: 400px;
+    float: left;
+    margin-top: 20px;
+}
+    #footer {
+        width: 800px;
+        height: 90px;
+        margin-top: 20px;
+        background-color: #f1f1f1;
+    }
